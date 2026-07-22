@@ -1,0 +1,44 @@
+{
+  "name": "battery-drainer",
+  "version": "1.0.0",
+  "description": "A satirical, opt-in browser library that turns electricity into slightly warmer arithmetic.",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "example",
+    "scripts",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "demo": "node ./scripts/serve-demo.js",
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run"
+  },
+  "keywords": [
+    "battery",
+    "satire",
+    "cpu",
+    "gpu",
+    "webgl",
+    "browser"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

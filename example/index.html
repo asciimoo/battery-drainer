@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Battery Drainer - Executive Console</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: ui-monospace, "Cascadia Code", monospace;
+      }
+      body {
+        max-width: 42rem;
+        margin: 4rem auto;
+        padding: 0 1rem;
+        background: #101410;
+        color: #d7ead6;
+      }
+      fieldset {
+        display: grid;
+        gap: 1rem;
+        border: 1px solid #6c8;
+        padding: 1.25rem;
+      }
+      label {
+        display: grid;
+        gap: 0.35rem;
+      }
+      .buttons {
+        display: flex;
+        gap: 0.75rem;
+      }
+      button,
+      select,
+      input {
+        font: inherit;
+      }
+      output {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Battery Drainer Demo</h1>
+    <p>
+		Battery Drainer is a precision browser library for converting stored electrical
+		energy into discarded arithmetic, without burdening the user with a pointless
+		animation, a cryptocurrency mining, useful work, or any other unwanted side effect.
+    </p>
+    <p>
+      Inspect the strategic depletion assets in the
+      <a href="https://github.com/asciimoo/battery-drainer">Battery Drainer repository</a>.
+    </p>
+    <fieldset>
+      <legend>Responsible resource mismanagement</legend>
+      <label>
+        Mode
+        <select id="mode">
+          <option value="cpu">CPU</option>
+          <option value="gpu">GPU</option>
+          <option value="both">CPU + GPU</option>
+        </select>
+      </label>
+      <label>
+        Intensity
+        <input id="intensity" type="range" min="0.1" max="1" step="0.1" value="0.5" />
+      </label>
+      <div class="buttons">
+        <button id="start" type="button">Start intentionally</button>
+        <button id="stop" type="button">Stop</button>
+      </div>
+      <output id="status">Stopped.</output>
+    </fieldset>
+    <script>
+      window.__batteryDrainerDemoLoaded = false;
+      window.setTimeout(() => {
+        if (window.__batteryDrainerDemoLoaded) return;
+
+        const status = document.querySelector("#status");
+        status.value =
+          location.protocol === "file:"
+            ? "Demo modules are blocked on file://. Run `npm run demo`, then open the displayed http:// URL."
+            : "The demo module did not load. Check the browser console for details.";
+      }, 500);
+    </script>
+    <script type="module" src="./demo.js"></script>
+  </body>
+</html>
